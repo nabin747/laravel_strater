@@ -84,10 +84,11 @@ class StudentController extends Controller
         ]);
     }
 
-    public function destroy(Student $id)
+    public function destroy(Student $student)
     {
-        $id->delete_flag = true;
-        $id->save();
+
+       $student->delete_flag = true;
+        $student->save();
         return response()->json([
             "message" => "Student deleted"
         ],200);
